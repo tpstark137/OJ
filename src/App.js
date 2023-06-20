@@ -7,7 +7,7 @@ import Home from'./components/Home'
 import ProblemList from './components/ProblemList';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-import Editor from './components/Editor';
+import Workspace from './components/Workspace';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
     <Route path="/problemList" element={<ProblemList/>} />
     <Route path="/login" element={<Login/>} />
     <Route path="/register" element={<SignUp/>} />
-    <Route path="/editor" element={<Editor/>}/>
+    <Route path="/editor" element={<Workspace/>}/>
 
     </Routes>
      </BrowserRouter>

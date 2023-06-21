@@ -8,6 +8,7 @@ import ProblemList from './components/ProblemList';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Workspace from './components/Workspace';
+import Submission from './components/Submission';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
     <Route path="/login" element={<Login/>} />
     <Route path="/register" element={<SignUp/>} />
     <Route path="/editor" element={<Workspace/>}/>
+    <Route path="/submission" element={<Submission/>}/>
+
 
     </Routes>
      </BrowserRouter>

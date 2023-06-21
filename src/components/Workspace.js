@@ -4,65 +4,101 @@ import ProblemDescription from './ProblemDescription'
 import './style.css'
 import AceEditor from 'react-ace';
 import "../../node_modules/ace-builds/src-min-noconflict/theme-twilight"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Workspace() {
-    return (
-        <Split className="split">
-            <ProblemDescription  />
+  const [code, setCode] = React.useState("")
+  const change = (e) => {
+    setCode(e)
+  }
+  const handleClick = () => {
+    console.log(code)
+
+    toast.success('Submitted Successfully 🎉🍾', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
+
+
+  return (
+    <Split className="split" minSize={0}>
+      <ProblemDescription />
+      <div>
+        <div className="border coding overflow-auto grey rounded-bottom">
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          {/* Same as */}
+          <ToastContainer />
+
+          <div className="d-flex justify-content-between py-2">
+            <div className="col-md-3 ms-2">
+              <select id="inputState" className="form-select a form-select grey border-secondary text-white">
+
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="c++">C++</option>
+                <option value="java">Javascript</option>
+              </select>
+            </div>
             <div>
-                <div className="border coding overflow-auto grey rounded-bottom">
-                
-                <div className="d-flex justify-content-between py-2">
-                  <div className="col-md-3 ms-2">
-                   <select  id="inputState" className="form-select a form-select grey border-secondary text-white">
-                    
-                    <option value="java">Java</option>
-                    <option value="python">Python</option>
-                    <option value="c++">C++</option>
-                    <option value="java">Javascript</option>
-                  </select>
-                  </div>
-                  <div>
-                    <button   className="btn btn-secondary me-4 lightgreen border-0">
-                      Submit
-                    </button>
-                  </div>
-                </div>
-                
+              <button className="btn btn-secondary me-4 lightgreen border-0" onClick={handleClick}>
+                Submit
+              </button>
+            </div>
+          </div>
 
-                    <AceEditor
-                        placeholder={"Enter your code here"}
+          <div>
+            <AceEditor
+              placeholder={"Enter your code here"}
+              onChange={change}
 
-                        height={400}
-                        width='100%'
-                        theme="twilight"
-                        name="codingPandaEditor"
+              height={"calc(80vh - 200px)"}
+              width='100%'
+              theme="twilight"
+              name="codingPandaEditor"
 
-                        fontSize={20}
-                        showPrintMargin={true}
-                        showGutter={true}
-                        highlightActiveLine={true}
+              fontSize={20}
+              showPrintMargin={true}
+              showGutter={true}
+              highlightActiveLine={true}
 
-                        setOptions={{
-                            enableBasicAutocompletion: true,
-                            enableLiveAutocompletion: true,
-                            enableSnippets: true,
-                            showLineNumbers: true,
-                            tabSize: 0
+              setOptions={{
+                showLineNumbers: true,
+                tabSize: 0
 
-                        }} 
-                       />
-                       
-                </div>
-                
-                <div className="d-flex flex-column justify-content-center align-items-center p-3 result grey rounded overflow-hidden">
-                    <p>Your code is Running Please wait!!</p>
-                </div>
-                </div>
+              }}
+
+            />
+
+          </div>
+
+          <div className="d-flex flex-column justify-content-center align-items-center p-3 result grey rounded overflow-hidden mt-3">
+            <p>All Test Cases Passed</p>
+          </div>
+        </div>
+      </div>
 
 
-            
-        </Split>
-    )
+
+    </Split>
+  )
 }
 export default Workspace;

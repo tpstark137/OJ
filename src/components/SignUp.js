@@ -45,54 +45,53 @@ function Login() {
             {/* Same as */}
             <ToastContainer />
             <h1 className="text-white">Account Registration</h1>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="email">Set User Name</label>
-                                <input
-                                    onChange={(e) => setName(e.target.value)}
-                                    type="email"
-                                    class="form-control"
-                                    name="email"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Set Email</label>
-                                <input
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    type="email"
-                                    class="form-control"
-                                    name="email"
-                                />
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Set Password</label>
-                                <input
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    type="password"
-                                    class="form-control"
-                                    name="password"
-                                />
-                                <br />
-                            </div>
-                            <button onClick={handleClick} class="btn btn-dark mb-3">
-                                Register
-                            </button>
+
+            <div className="col-sm-8">
+                <div className="card">
+                    <div className="card-body">
+                        <div className="form-group">
+                            <label >Set User Name</label>
+                            <input
+                                onChange={(e) => setName(e.target.value)}
+                                type="email"
+                                className="form-control"
+                                name="email"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="email">Set Email</label>
+                            <input
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                className="form-control"
+                                name="email"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Set Password</label>
+                            <input
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                className="form-control"
+                                name="password"
+                            />
+                            <br />
+                        </div>
+                        <button onClick={handleClick} className="btn btn-dark mb-3">
+                            Register
+                        </button>
 
 
-                            <div className="create_accountinfo">
-                                <p>Already Resistered ?</p>
-                                <NavLink to='/login' ><button className="mb-3">Go to Login Page</button></NavLink>
-                            </div>
+                        <div className="create_accountinfo">
+                            <p>Already Resistered ?</p>
+                            <NavLink to='/login' ><button className="mb-3 btn btn-dark">Go to Login Page</button></NavLink>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="col-sm-4"></div>
             </div>
+
+
         </div>
 
     )

@@ -1,42 +1,51 @@
-
-
-.h-screen{
-    height: 100vh;
+.logo {
+	color: red;
 }
+
+.h-screen {
+	height: 100vh;
+}
+
 .grey {
-    background-color: #383b40;
+	background-color: #383b40;
 }
-.lightgreen{
+
+.lightgreen {
 	background-color: red;
 }
+
 body {
-    background-color: #1f2023;
-    height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    color: #fff;
-    
+	background-color: #1f2023;
+	height: 100vh;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+
 }
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
-.title{
-    color:black;
-    text-decoration: none;
+
+.title {
+	color: black;
+	text-decoration: none;
 }
-.title:hover{
-    color: blue;
-    
+
+.title:hover {
+	color: blue;
+
 }
+
 .split {
-    display: flex;
-    flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }
 
 .gutter {
-    background-color: rgb(26, 26, 26);
+	background-color: rgb(26, 26, 26);
 	background-repeat: no-repeat;
 	background-position: 50%;
 }
